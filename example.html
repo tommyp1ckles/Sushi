@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<html>
+<body>
+  <img id="lenna" src="tiny.png" alt="Lenna" width="16" height="16">
+  
+  <canvas id="myCanvas" width="160" height="160" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.
+  </canvas>
+  <script src="stackblur.js"></script>
+  <script src="sushi.js"></script>
+  <script>
+
+  function displayExample() {
+    document.getElementById("lenna").onload = function () {
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      var img = document.getElementById("lenna");
+      ctx.drawImage(img, 0, 0);
+      var imgData = ctx.getImageData(0, 0, 16, 16);
+      var start = new Date().getTime();
+      var newdata;
+      var encodedImage = encodeBase64String(imgData.data, 16, 16);
+      var decodedImage = decodeBase64Image(encodedImage, 16, 16);
+      newdata = explodeImage(decodedImage.data, 16, 16, 160, 160);
+      processImageDataRGB(newdata, 0, 0, 160, 160, 19); 
+      ctx.putImageData(newdata, 0, 0);
+      console.log("Time taken: %d ms", new Date().getTime() - start);
+    };
+  }
+
+  displayExample();
+  </script>
+
+</body>
+</html>
