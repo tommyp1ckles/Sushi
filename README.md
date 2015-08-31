@@ -1,4 +1,7 @@
 # Sushi
+
+![alt tag](https://github.com/tommyp1ckles/Sushi/blob/master/canvas.png)
+
 Fast image image preview placeholders from tiny base 64 encoded images you
 can store as a string in a database.
 
