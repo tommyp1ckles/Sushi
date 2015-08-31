@@ -10,3 +10,5 @@ Clone this repo as well as https://github.com/flozz/StackBlur, copy
 /src/stackblur.js to Sushi root and open example.html as well as marvel 
 at the speed of flozz's linear time guassian blur implementation.
 
+## Future work.
+Perhaps use a DCT to make the image smaller.
